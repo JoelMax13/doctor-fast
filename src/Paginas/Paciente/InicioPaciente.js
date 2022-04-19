@@ -11,20 +11,20 @@ class InicioPaciente extends Component{
                     <img className="logo" src={require("../../Imagenes/LogoDoctorFast1.png")}/>
                     <span className="nombreApp">DoctorFast</span>
                 </header>
-                {/* <span className="menuIcono">☰</span> */}
+                <span className="menuIcono">☰</span>
                 <div className="navigation">
                     <ul className="ulNavegacion">
                         <li className="liNavegacion">
-                            <a className="menuClickeado aNavegacion" href="SystemHomePatient.html"><i className="fa fa-home"></i><br/>Inicio</a>
+                            <a className="menuClickeado aNavegacion"><i className="fa fa-home"></i><br/>Inicio</a>
                         </li>
                         <li>
-                            <a className="aNavegacion" href="SystemDatePatient.html"><i className="fa fa-calendar-check-o"></i><br/>Citas</a>
+                            <a className="aNavegacion"><i className="fa fa-calendar-check-o"></i><br/>Citas</a>
                         </li>
                         <li>
-                            <a className="aNavegacion" href="SystemPrescriptionPatient.html"><i className="fa fa-file-text-o"></i><br/>Recetas</a>
+                            <a className="aNavegacion"><i className="fa fa-file-text-o"></i><br/>Recetas</a>
                         </li>
                         <li>
-                            <a className="aNavegacion" href="SystemMedicalHistory.html"><i className="fa fa-paste"></i><br/>Historial Médico</a>
+                            <a className="aNavegacion"><i className="fa fa-paste"></i><br/>Historial Médico</a>
                         </li>
                     </ul>
                 </div>

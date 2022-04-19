@@ -7,7 +7,7 @@ import InicioDoctor from './Doctor/InicioDoctor';
 function App() {
   return (
     <div className="App">
-      <InicioPaciente/>
+      <InicioDoctor/>
     </div>
   );
 }

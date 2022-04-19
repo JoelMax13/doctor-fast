@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import '../../Css-Componentes/Paciente/BackgroundPatient.css';
+import '../../Css-Componentes/Doctor/ListaCalificaciones.css';
 import '../../Imagenes/LogoDoctorFast1.png';
 
 class InicioDoctor extends Component{
@@ -12,20 +13,29 @@ class InicioDoctor extends Component{
                 </header>
                 <span className="menuIcono">☰</span>
                 <div className="navigation">
-                    <ul>
-                        <li>
-                            <a className="menuClickeado" href="SystemHomePatient.html"><i className="fa fa-home"></i><br/>Inicio</a>
+                    <ul className="ulNavegacion">
+                        <li className="liNavegacion">
+                            <a className="menuClickeado aNavegacion"><i className="fa fa-home"></i><br/>Inicio</a>
                         </li>
                         <li>
-                            <a href="SystemDatePatient.html"><i className="fa fa-calendar-check-o"></i><br/>Citas</a>
+                            <a className="aNavegacion"><i className="fa fa-calendar-check-o"></i><br/>Citas</a>
                         </li>
+                        {/* Crear historial Médico */}
                         <li>
-                            <a href="Rangos.html"><i className="fa fa-file-text-o"></i><br/>Recetas</a>
+                            <a className="aNavegacion"><i className="fa fa-paste"></i><br/>Historial Médico</a>
                         </li>
                     </ul>
                 </div>
                 <div className="contenido">
-                    <h1>Hola de nuevo </h1>
+                    <h1>Hola de nuevo Julian Daniel Alvarez...</h1>
+                    <div className='Contenedor-Calificacion'> 
+                        <div className='Contenedor-texto-Calificacion'>
+                            <p className='Nombre-Paciente'>Ricardo Haro</p>
+                            <p className='Horario-Cita'>14:00 18/04/2022</p>
+                            <p className='Direccion-Doctor'>Av. 12 de Octubre y Colon</p>
+                            <p className='Calificacion'>🌟🌟🌟🌟🌟</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
