@@ -5,8 +5,6 @@ import '../Css-Componentes/FondoBase.css';
 
 import axios from "axios";
 
-// import { BrowserRouter as Router, Route, Link, NavLink, Switch } from "react-router-dom";
-
 const url = "https://localhost:44305/authentication/login";
 
 class Login extends Component{
@@ -57,7 +55,7 @@ class Login extends Component{
                     <label className="col-sm-3 col-form-label lblArriba">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/></svg>
+                        <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/></svg>
                         Correo / Usuario
                     </label>
                     <div className="col-sm-9 txtAbajo">
@@ -82,11 +80,11 @@ class Login extends Component{
                             <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
                         </svg>
                     </button>
-                    <label for="BtnVerContrasena">Mostrar Contraseña</label>
+                    <label htmlFor="BtnVerContrasena">Mostrar Contraseña</label>
                 </div>
                 <input className="btn btn-primary" id="BtnIngresar" type='button' value="Ingresar" onClick={()=> this.peticionLogin()}/>
                 <div className="abajo">
-                    <label>Para registrarse <a href="RegisterChoose.html">Click Aquí</a></label>
+                    <label>Para registrarse <button>Click Aquí</button></label>
                 </div>
             </div>
                 </div>
