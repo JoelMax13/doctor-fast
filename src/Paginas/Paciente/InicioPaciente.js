@@ -7,7 +7,7 @@ class InicioPaciente extends Component{
     render(){
         return(
             <div className="cuadro">
-                <header>
+                <header className="headerPaciente">
                     <img className="logo" src={require("../../Imagenes/LogoDoctorFast1.png")}/>
                     <span className="nombreApp">DoctorFast</span>
                 </header>

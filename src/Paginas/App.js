@@ -1,17 +1,25 @@
 import React from 'react';
-import { Route } from 'wouter';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 import Login from './Login';
+import Registro from './Registro';
+import RegistroDoctor from './RegistroDoctor';
+import RegistroPaciente from './RegistroPaciente';
 import InicioPaciente from './Paciente/InicioPaciente';
 import InicioDoctor from './Doctor/InicioDoctor';
 
-function App() {
+
+export default function App() {
   return (
-    <div className="App">
-      <Route component={InicioDoctor} path='/iniciodoctor'/>
-      <Route component={Login} path='/login'/>
-    </div>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Login/>}/>
+            <Route path='/registro' element={<Registro/>}/>
+            <Route path='/registrodoctor' element={<RegistroDoctor/>}/>
+            <Route path='/registropaciente' element={<RegistroPaciente/>}/>
+            <Route path='/iniciopaciente' element={<InicioPaciente/>}/>
+            <Route path='/iniciodoctor' element={<InicioDoctor/>}/>
+          </Routes>
+        </BrowserRouter>
   );
 }
-
-export default App;

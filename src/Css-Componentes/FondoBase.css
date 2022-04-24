@@ -4,24 +4,25 @@ html, body{
 body{
     margin: 0 0 0 0;
     padding: 0;
-    background: #171717;
+    background-color: #171717;
     background-size: auto 100%;
-    color: white;
 }
-h1{
+.h1{
     margin-top: 5%;
     text-align: center;
+    color: white;
 }
 .fondo{ /*Definimos al div con sus características*/
     display: flex;
     height: calc(100vh 100vh);
     position: relative;
+    color: white;
 }
 .fondo::before{ /*Usamos ::before para poder opacar solo el fondo de la imagen en un div*/
     content: '';
     position: absolute;
-    /* background-image: url("../Images/FondoPrincipal2.jpg"); */
-    /* background-size: 100% 100%; */
+    /* background-image: url("../Imagenes/FondoPrincipal2.jpg");
+    background-size: 100% 100%; */
     background-repeat: no-repeat;
     top: 0px;
     bottom: 0px;
@@ -29,7 +30,7 @@ h1{
     left: 0px;
     z-index: -1;
     opacity: .2;
-    background: url("../Imagenes/FondoPrincipal.jpg") no-repeat center center fixed; 
+    background: url("../Imagenes/FondoPrincipal2.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -44,7 +45,6 @@ h1{
     margin-left:auto;
     margin-right:auto;
     border-radius: 10px;
-    color: white;
     
     /*box-shadow: 0 1px 1px wheat, 
               0 2px 2px wheat, 
