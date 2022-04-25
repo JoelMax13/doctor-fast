@@ -8,8 +8,9 @@ body{
     /* background-color: rgb(109, 195, 205); */
 }
 .fondoSistema{
+    overflow: scroll;
     display: flex;
-    height: calc(100vh 100vh);
+    /* height: calc(100vh 100vh); */
     position:fixed;
     color: white;
     top: 0px;

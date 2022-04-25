@@ -3,7 +3,7 @@ import '../../Css-Componentes/Paciente/BackgroundPatient.css';
 import '../../Css-Componentes/Doctor/ListaCalificaciones.css';
 import '../../Imagenes/LogoDoctorFast1.png';
 
-class InicioDoctor extends Component{
+export default class CitasDoctor extends Component{
     render(){
         return(
             <div className="fondoSistema">
@@ -16,10 +16,10 @@ class InicioDoctor extends Component{
                     <div className="navigation">
                         <ul className="ulNavegacion">
                             <li className="liNavegacion">
-                                <a className="menuClickeado aNavegacion" href="/iniciodoctor"><i className="fa fa-home"></i><br/>Inicio</a>
+                                <a className="aNavegacion" href="/iniciodoctor"><i className="fa fa-home"></i><br/>Inicio</a>
                             </li>
                             <li>
-                                <a className="aNavegacion" href="/citasdoctor"><i className="fa fa-calendar-check-o"></i><br/>Citas</a>
+                                <a className="menuClickeado aNavegacion" href="/citasdoctor"><i className="fa fa-calendar-check-o"></i><br/>Citas</a>
                             </li>
                             {/* Crear historial Médico */}
                             <li>
@@ -41,6 +41,5 @@ class InicioDoctor extends Component{
                 </div>
             </div>
         );
-    };
+    }
 }
-export default InicioDoctor;

@@ -16,16 +16,16 @@ class InicioPaciente extends Component{
                     <div className="navigation">
                         <ul className="ulNavegacion">
                             <li className="liNavegacion">
-                                <a className="menuClickeado aNavegacion"><i className="fa fa-home"></i><br/>Inicio</a>
+                                <a className="menuClickeado aNavegacion" href="/iniciopaciente"><i className="fa fa-home"></i><br/>Inicio</a>
                             </li>
                             <li>
-                                <a className="aNavegacion"><i className="fa fa-calendar-check-o"></i><br/>Citas</a>
+                                <a className="aNavegacion" href="/citaspaciente"><i className="fa fa-calendar-check-o"></i><br/>Citas</a>
                             </li>
                             <li>
-                                <a className="aNavegacion"><i className="fa fa-file-text-o"></i><br/>Recetas</a>
+                                <a className="aNavegacion" href="/recetaspaciente"><i className="fa fa-file-text-o"></i><br/>Recetas</a>
                             </li>
                             <li>
-                                <a className="aNavegacion"><i className="fa fa-paste"></i><br/>Historial Médico</a>
+                                <a className="aNavegacion" href="/historialmedicopaciente"><i className="fa fa-paste"></i><br/>Historial Médico</a>
                             </li>
                         </ul>
                     </div>
