@@ -5,8 +5,8 @@ import Login from './Login';
 import Registro from './Registro';
 import RegistroDoctor from './RegistroDoctor';
 import RegistroPaciente from './RegistroPaciente';
-import InicioPaciente from './Paciente/InicioPaciente';
 import InicioDoctor from './Doctor/InicioDoctor';
+import InicioPaciente from './Paciente/InicioPaciente';
 
 
 export default function App() {

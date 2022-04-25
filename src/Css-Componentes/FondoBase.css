@@ -4,8 +4,8 @@ html, body{
 body{
     margin: 0 0 0 0;
     padding: 0;
-    background-color: #171717;
     background-size: auto 100%;
+    /* background-color: #171717; */
 }
 .h1{
     margin-top: 5%;
@@ -13,10 +13,12 @@ body{
     color: white;
 }
 .fondo{ /*Definimos al div con sus características*/
+    /* background-color: #171717; */
     display: flex;
     height: calc(100vh 100vh);
     position: relative;
     color: white;
+    background-color: #171717;
 }
 .fondo::before{ /*Usamos ::before para poder opacar solo el fondo de la imagen en un div*/
     content: '';
@@ -28,7 +30,7 @@ body{
     bottom: 0px;
     right: 0px;
     left: 0px;
-    z-index: -1;
+    z-index: 0;
     opacity: .2;
     background: url("../Imagenes/FondoPrincipal2.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
