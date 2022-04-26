@@ -21,14 +21,12 @@ class Login extends Component{
     //     this.peticionLogin();
     // }
 
-    peticionLogin() {
-        // Simple POST request with a JSON body using axios
-        const body = { username: 'Hernesto34' , password: '12345678' };
-        let resp;
+    peticionLogin(usuario, contrasena) {
+        //username: 'Hernesto34' , password: '12345678'
+        const body = { username: usuario , password: contrasena };
         axios.post(url, body)
-            .then(response => resp = response.data)
+            .then(response => console.log(response.data))
             .catch(error => console.log(error));
-        console.log(resp);
     }
 
     state = {
@@ -39,16 +37,22 @@ class Login extends Component{
         this.setState({esVistaContrasena : !esVistaContrasena});
     }
 
-    // usuarioRef = React.createRef();
+    usuario = React.createRef();
+    contrasena = React.createRef();
 
-    // obtenerDatos = (e) =>{
-    //     e.preventDefault();
-    //     console.log(this.usuarioRef.current.value);
-    // }
+    obtenerDatos = (event) => {
+        event.preventDefault();
+        let usuarioP = this.usuario.current.value;
+        let contrasenaP = this.contrasena.current.value;
+        console.log(usuarioP, contrasenaP);
+        this.peticionLogin(usuarioP, contrasenaP);
+    }
 
     render(){
         const {esVistaContrasena} = this.state;
         return(
+            // <form onSubmit={this.peticionLogin}>
+            // <form>
             <form onSubmit={this.obtenerDatos}>
                 <div className='fondo'>
                     <div className='cuadro'>
@@ -62,7 +66,7 @@ class Login extends Component{
                                     Número de identidad:
                                 </label>
                                 <div className="col-sm-9 txtAbajo">
-                                    <input ref={this.usuarioRef} type='text' className="form-control" id="TxtCorreo" placeholder=""/>
+                                    <input ref={this.usuario} type='text' name="usuario" className="form-control" id="TxtCorreo" placeholder=""/>
                                 </div>
                             </div>
                             <div className="mb-3 row">
@@ -73,7 +77,7 @@ class Login extends Component{
                                      Contraseña:
                                 </label>
                                 <div className="col-sm-9 txtAbajo">
-                                    <input type={(esVistaContrasena) ? "text" : "password"} className="form-control" id="TxtContrasena"/>
+                                    <input ref={this.contrasena} type={(esVistaContrasena) ? "text" : "password"} name="contrasena" className="form-control" id="TxtContrasena"/>
                                 </div>
                             </div>
                             <div>
@@ -85,7 +89,7 @@ class Login extends Component{
                                 </button>
                                 <label htmlFor="BtnVerContrasena">Mostrar Contraseña</label>
                             </div>
-                            <input className="btn btn-primary" id="BtnIngresar" type='button' value="Ingresar" onClick={()=> this.peticionLogin()}/>
+                            <button className="btn btn-primary" id="BtnIngresar" type='submit'>Ingresar</button>
                             <div className="abajo">
                                 <label>Para registrarse <a href='/registro'>Click Aquí</a></label>
                             </div>
