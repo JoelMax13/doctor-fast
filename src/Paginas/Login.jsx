@@ -6,7 +6,7 @@ import '../Css-Componentes/FondoBase.css';
 
 import axios from "axios";
 
-const url = "https://localhost:44305/authentication/login";
+const uri = "https://localhost:44305/authentication/login";
 
 class Login extends Component{
     // state={
@@ -24,7 +24,7 @@ class Login extends Component{
     peticionLogin(usuario, contrasena) {
         //username: 'Hernesto34' , password: '12345678'
         const body = { username: usuario , password: contrasena };
-        axios.post(url, body)
+        axios.post(uri, body)
             .then(response => console.log(response.data))
             .catch(error => console.log(error));
     }

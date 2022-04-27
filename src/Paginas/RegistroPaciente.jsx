@@ -2,6 +2,59 @@ import React, { Component, useState } from 'react';
 
 class RegistroPaciente extends Component{
     render(){
+
+        cedula = React.createRef();
+        nombres = React.createRef();
+        apellidos = React.createRef();
+        telefono = React.createRef();
+        celular = React.createRef();
+        direccion = React.createRef();
+        usuario = React.createRef();
+        correo = React.createRef();
+        contrasena = React.createRef();
+        confirmarContrasena = React.createRef();
+        
+        obtenerDatos = (event) =>{
+            event.preventDefault();
+            let cedula = this.cedula.current.value;
+            let nombres = this.nombres.current.value;
+            let apellidos = this.apellidos.current.value;
+            let telefono = this.telefono.current.value;
+            let celular = this.celular.current.value;
+            let direccion = this.direccion.current.value;
+            let usuario = this.usuario.current.value;
+            let correo = this.correo.current.value;
+            let contrasena = this.contrasena.current.value;
+            let confirmarContrasena = this.confirmarContrasena.current.value;
+            
+            console.log(cedula, nombres, apellidos, telefono, celular, direccion, usuario,
+                contrasena, correo);
+            // if(contrasena == confirmarContrasena){
+            //     // this.ingresarDatosPaciente(cedula, nombres, apellidos, telefono, celular, direccion, usuario, contrasena, correo);
+            // }
+            // else{
+            //     alert("No se ha podido guardar sus datos");
+            // }
+        }
+
+        ingresarDatosPaciente(cedulaP, nombresP, apellidosP, telefonoP, celularP, direccionP, usuarioP, contrasenaP, correoP){
+            const body = { 
+                cedula: cedulaP,
+                nombres: nombresP,
+                apellidos: apellidosP,
+                telefono: telefonoP,
+                celular: celularP,
+                direccion: direccionP,
+                usuario: usuarioP,
+                correo: correoP,
+                contrasena: contrasenaP
+            }
+            axios.post(uri, body)
+                .then(response => console.log(response.data))
+                .catch(error => console.log(error));
+        }
+
+        //Falta poner el onSubmit formulario
         return(
             <form>
                 <div class="fondo">
@@ -16,7 +69,7 @@ class RegistroPaciente extends Component{
                                         Número de identidad:
                                     </label>
                                     <div class="col-sm-9 txtAbajo">
-                                        <input type="text" class="form-control" id="TxtCedula" placeholder="Número de identidad"/>
+                                        <input ref={this.cedula} type="text" class="form-control" id="TxtCedula" placeholder="Número de identidad"/>
                                     </div>
                                 </div>
                                 {/* Nombres */}
@@ -25,7 +78,7 @@ class RegistroPaciente extends Component{
                                         Nombres:
                                     </label>
                                     <div class="col-sm-9 txtAbajo">
-                                        <input type="text" class="form-control" id="TxtNombres" placeholder=""/>
+                                        <input ref={this.nombres} type="text" class="form-control" id="TxtNombres" placeholder=""/>
                                     </div>
                                 </div>
                                 {/* Apellidos */}
@@ -34,7 +87,7 @@ class RegistroPaciente extends Component{
                                         Apellidos:
                                     </label>
                                     <div class="col-sm-9 txtAbajo">
-                                        <input type="text" class="form-control" id="TxtApellidos" placeholder=""/>
+                                        <input ref={this.apellidos} type="text" class="form-control" id="TxtApellidos" placeholder=""/>
                                     </div>
                                 </div>
                             </div>
@@ -46,7 +99,7 @@ class RegistroPaciente extends Component{
                                         Teléfono:
                                     </label>
                                     <div class="col-sm-9 txtAbajo">
-                                        <input type="text" class="form-control" id="TxtTelefono" placeholder=""/>
+                                        <input ref={this.telefono} type="text" class="form-control" id="TxtTelefono" placeholder=""/>
                                     </div>
                                 </div>
                                 {/* Celular */}
@@ -55,7 +108,7 @@ class RegistroPaciente extends Component{
                                         Celular:
                                     </label>
                                     <div class="col-sm-9 txtAbajo">
-                                        <input type="text" class="form-control" id="TxtCelular" placeholder=""/>
+                                        <input ref={this.celular} type="text" class="form-control" id="TxtCelular" placeholder=""/>
                                     </div>
                                 </div>
                                 {/* Dirección */}
@@ -64,7 +117,7 @@ class RegistroPaciente extends Component{
                                         Dirección:
                                     </label>
                                     <div class="col-sm-9 txtAbajo">
-                                        <input type="text" class="form-control" id="TxtDireccion" placeholder=""/>
+                                        <input ref={this.direccion} type="text" class="form-control" id="TxtDireccion" placeholder=""/>
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +129,7 @@ class RegistroPaciente extends Component{
                                         Correo:
                                     </label>
                                     <div class="col-sm-9 txtAbajo">
-                                        <input type="text" class="form-control" id="TxtCorreo"/>
+                                        <input ref={this.correo} type="text" class="form-control" id="TxtCorreo"/>
                                     </div>
                                 </div>
                                 {/* Contraseña */}
@@ -85,7 +138,7 @@ class RegistroPaciente extends Component{
                                         Contraseña:
                                     </label>
                                     <div class="col-sm-9 txtAbajo">
-                                        <input type="text" class="form-control" id="TxtContrasena"/>
+                                        <input ref={this.contrasena} type="text" class="form-control" id="TxtContrasena"/>
                                     </div>
                                 </div>
                                 {/* Confirmar Contraseña */}
@@ -94,7 +147,7 @@ class RegistroPaciente extends Component{
                                         Confirmar Contraseña:
                                     </label>
                                     <div class="col-sm-9 txtAbajo">
-                                        <input type="text" class="form-control" id="TxtConfirmarContrasena"/>
+                                        <input ref={this.confirmarContrasena} type="text" class="form-control" id="TxtConfirmarContrasena"/>
                                     </div>
                                 </div>
                             </div>
