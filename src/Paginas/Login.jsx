@@ -1,32 +1,41 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 
-import RegistroDoctor from './RegistroDoctor';
 import '../Css-Componentes/Login.css';
 import '../Css-Componentes/FondoBase.css';
+
 
 import axios from "axios";
 
 const uri = "https://doctorfastapi.herokuapp.com/login";
 
 class Login extends Component{
-    // state={
-    //     data:[],
-    //     peticionLogin: false,
-    // }
-
-    // peticionLogin = () => {
-    //     this.setState({ modalInsertar: !this.state.modalInsertar})
-    // }
-    // componentDidMount(){
-    //     this.peticionLogin();
-    // }
-
     peticionLogin(usuario, contrasena) {
         //username: 'Hernesto34' , password: '12345678'
         const body = { usuario: usuario , contrasena: contrasena };
         axios.post(uri, body)
-            .then(response => console.log(response.data))
+            .then(response => {if (response.data.jwt) {
+                let auth = response.data.auth;
+                let rol = response.data.rol;
+                localStorage.setItem("user", JSON.stringify(response.data));
+                if(auth === true){
+                    if(rol === 1){
+                        console.log("Pagina Paciente");
+                    }else{
+                        console.log("Pagina Doctor");
+                    }
+                }else{
+                    alert("Usuario o contraseña incorrectos. Intente de nuevo.");
+                }
+            }else{
+                console.log("hola");
+            } 
+            })
+            // return response.data;})
             .catch(error => console.log(error));
+
+        // axios.post(uri, body)
+        //     .then(response => console.log(response.data))
+        //     .catch(error => console.log(error));
     }
 
     state = {
@@ -44,7 +53,7 @@ class Login extends Component{
         event.preventDefault();
         let usuarioP = this.usuario.current.value;
         let contrasenaP = this.contrasena.current.value;
-        console.log(usuarioP, contrasenaP);
+        // console.log(usuarioP, contrasenaP);
         this.peticionLogin(usuarioP, contrasenaP);
     }
 
