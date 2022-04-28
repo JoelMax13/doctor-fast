@@ -6,7 +6,7 @@ import '../Css-Componentes/FondoBase.css';
 
 import axios from "axios";
 
-const uri = "https://localhost:44305/authentication/login";
+const uri = "https://doctorfastapi.herokuapp.com/login";
 
 class Login extends Component{
     // state={
@@ -23,7 +23,7 @@ class Login extends Component{
 
     peticionLogin(usuario, contrasena) {
         //username: 'Hernesto34' , password: '12345678'
-        const body = { username: usuario , password: contrasena };
+        const body = { usuario: usuario , contrasena: contrasena };
         axios.post(uri, body)
             .then(response => console.log(response.data))
             .catch(error => console.log(error));

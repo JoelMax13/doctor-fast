@@ -1,72 +1,79 @@
 import React, { Component, useState } from 'react';
+import axios from 'axios';
 
 const uri = "https://doctorfastapi.herokuapp.com/signup/doctor";
 
 class RegistroDoctor extends Component{
+
+    cedula = React.createRef();
+    nombres = React.createRef();
+    apellidos = React.createRef();
+    telefono = React.createRef();
+    celular = React.createRef();
+    direccion = React.createRef();
+    usuario = React.createRef();
+    correo = React.createRef();
+    contrasena = React.createRef();
+    confirmarContrasena = React.createRef();
+    especialidad = React.createRef();
+    titulo = React.createRef();
+    entrada = React.createRef();
+    salida = React.createRef();
+
+    obtenerDatos = (event) =>{
+        event.preventDefault();
+        let cedula = this.cedula.current.value;
+        let nombres = this.nombres.current.value;
+        let apellidos = this.apellidos.current.value;
+        let telefono = this.telefono.current.value;
+        let celular = this.celular.current.value;
+        let direccion = this.direccion.current.value;
+        let usuario = this.usuario.current.value;
+        let correo = this.correo.current.value;
+        let contrasena = this.contrasena.current.value;
+        let confirmarContrasena = this.confirmarContrasena.current.value;
+        let especialidad = this.especialidad.current.value;
+        let titulo = this.titulo.current.value;
+        let entrada = this.entrada.current.value;
+        let salida = this.salida.current.value;
+        console.log(cedula, nombres, apellidos, telefono, celular, direccion, usuario,
+            contrasena, correo, especialidad, titulo, entrada, salida);
+        if(contrasena == confirmarContrasena){
+            this.ingresarDatosDoctor(cedula, nombres, apellidos, telefono, celular, direccion, usuario, contrasena, correo, especialidad, titulo, entrada, salida);
+            alert("Usuario creado exitosamente");
+            this.recargar();
+        }
+        else{
+            alert("Las contraseñas no coinciden");
+        }
+    }
+
+    ingresarDatosDoctor(cedulaP, nombresP, apellidosP, telefonoP, celularP, direccionP, usuarioP, contrasenaP, correoP, especialidadP, tituloP, entradaP, salidaP){
+        const body = { 
+            cedula: cedulaP,
+            nombres: nombresP,
+            apellidos: apellidosP,
+            telefono: telefonoP,
+            celular: celularP,
+            direccion: direccionP,
+            usuario: usuarioP,
+            correo: correoP,
+            contrasena: contrasenaP,
+            especialidad: especialidadP,
+            titulo: tituloP,
+            entrada: entradaP,
+            salida: salidaP
+        }
+        axios.post(uri, body)
+            .then(response => console.log(response.data))
+            .catch(error => console.log(error))
+    }
+
+    recargar() {
+        window.location.href = window.location.href;
+    }
+
     render(){
-
-        cedula = React.createRef();
-        nombres = React.createRef();
-        apellidos = React.createRef();
-        telefono = React.createRef();
-        celular = React.createRef();
-        direccion = React.createRef();
-        usuario = React.createRef();
-        correo = React.createRef();
-        contrasena = React.createRef();
-        confirmarContrasena = React.createRef();
-        especialidad = React.createRef();
-        titulo = React.createRef();
-        entrada = React.createRef();
-        salida = React.createRef();
-
-        obtenerDatos = (event) =>{
-            event.preventDefault();
-            let cedula = this.cedula.current.value;
-            let nombres = this.nombres.current.value;
-            let apellidos = this.apellidos.current.value;
-            let telefono = this.telefono.current.value;
-            let celular = this.celular.current.value;
-            let direccion = this.direccion.current.value;
-            let usuario = this.usuario.current.value;
-            let correo = this.correo.current.value;
-            let contrasena = this.contrasena.current.value;
-            let confirmarContrasena = this.confirmarContrasena.current.value;
-            let especialidad = this.especialidad.current.value;
-            let titulo = this.titulo.current.value;
-            let entrada = this.entrada.current.value;
-            let salida = this.salida.current.value;
-            console.log(cedula, nombres, apellidos, telefono, celular, direccion, usuario,
-                contrasena, correo, especialidad, titulo, entrada, salida);
-            // if(contrasena == confirmarContrasena){
-            //     // this.ingresarDatosDoctor(cedula, nombres, apellidos, telefono, celular, direccion, usuario, contrasena, correo, especialidad, titulo, entrada, salida);
-            // }
-            // else{
-            //     alert("No se ha podido guardar sus datos");
-            // }
-        }
-
-        ingresarDatosDoctor(cedulaP, nombresP, apellidosP, telefonoP, celularP, direccionP, usuarioP, contrasenaP, correoP, especialidadP, tituloP, entradaP, salidaP){
-            const body = { 
-                cedula: cedulaP,
-                nombres: nombresP,
-                apellidos: apellidosP,
-                telefono: telefonoP,
-                celular: celularP,
-                direccion: direccionP,
-                usuario: usuarioP,
-                correo: correoP,
-                contrasena: contrasenaP,
-                especialidad: especialidadP,
-                titulo: tituloP,
-                entrada: entradaP,
-                salida: salidaP
-            }
-            axios.post(uri, body)
-                .then(response => console.log(response.data))
-                .catch(error => console.log(error))
-        }
-
         //Falta poner el onSubmit formulario
         return(
             <form>
