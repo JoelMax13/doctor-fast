@@ -3,12 +3,18 @@ import '../../Css-Componentes/Paciente/BackgroundPatient.css';
 import '../../Css-Componentes/Paciente/ListaDoctores.css';
 import '../../Imagenes/LogoDoctorFast1.png';
 
+import axios from "axios";
+
+let uri = 'https://doctorfastapi.herokuapp.com/paciente';
+
 export default function InicioPaciente(){
 
     let usuario = localStorage.getItem('user');
 
     function getNombre(){
-        
+        axios.get(uri, usuario)
+        .then(response => alert(response))
+        .catch(error => alert(error))
     }
 
     return(
@@ -49,16 +55,6 @@ export default function InicioPaciente(){
                             <p className='Horarios-Doctor'>11:00 a 16:00</p>
                             <p className='Direccion-Doctor'>Av. 12 de Octubre y Colon</p>
                             <p className='Calificacion'>🌟🌟🌟🌟🌟</p>
-                        </div>
-                        <button className='btn btn-outline-secondary BtnAgendar'>Agendar</button>
-                    </div>
-                    <div className='Contenedor-Doctor'> 
-                        <div className='Contenedor-texto-Doctor'>
-                            <p className='Nombre-Doctor'>Gonzalo Vinicio Plata</p>
-                            <p className='Especialidad-Doctor'>Cardiología</p>
-                            <p className='Horarios-Doctor'>8:00 a 14:00</p>
-                            <p className='Direccion-Doctor'>Av. 6 de Diciembre y Río Coca</p>
-                            <p className='Calificacion'>🌟🌟🌟</p>
                         </div>
                         <button className='btn btn-outline-secondary BtnAgendar'>Agendar</button>
                     </div>
