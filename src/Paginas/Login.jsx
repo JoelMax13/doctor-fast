@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import '../Css-Componentes/Login.css';
 import '../Css-Componentes/FondoBase.css';
 
-
 import axios from "axios";
 
 const uri = "https://doctorfastapi.herokuapp.com/login";
@@ -50,6 +49,15 @@ export default function Login(){
             .catch(error => alert(error));
     }
 
+    function mostrarContrasena(){
+        var tipo = document.getElementById("txtContrasena");
+        if(tipo.type == "password"){
+            tipo.type = "text";
+        }else{
+            tipo.type = "password";
+        }
+    }
+
         return(
         // <form onSubmit={this.peticionLogin}>
         // <form>
@@ -63,10 +71,15 @@ export default function Login(){
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16">
                                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                                 <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/></svg>
-                                Número de identidad:
+                                Usuario:
                             </label>
                             <div className="col-sm-9 txtAbajo">
-                                <input id='txtUsuario' type='text' className="form-control" onChange={(e)=>setUsu(e.target.value)} required/>
+                                <input 
+                                    id='txtUsuario' 
+                                    type='text' 
+                                    className="form-control" 
+                                    onChange={(e)=>setUsu(e.target.value)} 
+                                    required/>
                             </div>
                         </div>
                         <div className="mb-3 row">
@@ -77,11 +90,16 @@ export default function Login(){
                                  Contraseña:
                             </label>
                             <div className="col-sm-9 txtAbajo">
-                                <input id='txtContrasena' type='password' className="form-control" onChange={(e)=>setCon(e.target.value)} required/>
+                                <input 
+                                    id='txtContrasena'
+                                    type="password"
+                                    className="form-control"
+                                    onChange={(e)=>setCon(e.target.value)} 
+                                    required/>
                             </div>
                         </div>
                         <div>
-                            <button id="BtnVerContrasena" type="button">
+                            <button id="BtnVerContrasena" type="button" onClick={mostrarContrasena}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-eye-fill" viewBox="0 0 16 16">
                                     <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
                                     <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
