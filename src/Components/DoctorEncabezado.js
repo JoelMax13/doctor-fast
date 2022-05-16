@@ -10,7 +10,6 @@ export default function DoctorEncabezado(){
                 <img className="logo" src={require("../Imagenes/LogoDoctorFast1.png")}/>
                 <span className="nombreApp">DoctorFast</span>
             </header>
-            <span className="menuIcono">☰</span>
             <div className="navigation">
                 <ul className="ulNavegacion">
                     <li className="liNavegacion">

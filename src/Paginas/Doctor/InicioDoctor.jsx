@@ -3,12 +3,13 @@ import DoctorEncabezado from "../../Components/DoctorEncabezado";
 import Saludo from "../../Components/Saludo";
 
 export default function InicioDoctor(){
+    const nombre = localStorage.getItem('nombre');
     return(
         <div className="fondoSistema">
             <div className="cuadro">
                 <DoctorEncabezado/>
                 <div className="contenido">
-                    <Saludo name=""/>
+                    <Saludo name={nombre}/>
                     <div className='Contenedor-Calificacion'> 
                         <div className='Contenedor-texto-Calificacion'>
                             <p className='Nombre-Paciente'>Ricardo Haro</p>
