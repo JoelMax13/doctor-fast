@@ -62,7 +62,7 @@ class RegistroPaciente extends Component{
     render(){
         //Falta poner el onSubmit formulario
         return(
-            <form onSubmit={this.recargar}>
+            <form onSubmit={this.obtenerDatos}>
                 <div className="fondo">
                     <div className="cuadro">
                         <h1 className='h1'>Registro:</h1>

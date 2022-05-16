@@ -76,7 +76,7 @@ class RegistroDoctor extends Component{
     render(){
         //Falta poner el onSubmit formulario
         return(
-            <form>
+            <form onSubmit={this.obtenerDatos}>
                 <div className="fondo">
                     <div className="cuadro">
                         <h1 className='h1'>Registro:</h1>

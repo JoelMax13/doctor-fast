@@ -33,6 +33,7 @@ export default function Login(){
                 let rol = response.data.rol;
                 if(auth === true){
                     localStorage.setItem("user", JSON.stringify(response.data.jwt));
+                    localStorage.setItem("nombre", JSON.stringify(response.data.name))
                     if(rol === 1){
                         navigate('/iniciopaciente');
                     }else{
