@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import DoctorEncabezado from "../../Components/DoctorEncabezado";
-import Saludo from "../../Components/Saludo";
 
 export default function InicioDoctor(){
     const nombre = localStorage.getItem('nombre');
@@ -8,9 +7,24 @@ export default function InicioDoctor(){
         <div className="fondoSistema">
             <div className="cuadro">
                 <DoctorEncabezado/>
+                <div className="navigation">
+                    <ul className="ulNavegacion">
+                        <li className="liNavegacion">
+                            <a className="menuClickeado aNavegacion" href="/iniciodoctor"><i className="fa fa-home"></i><br/>Inicio</a>
+                        </li>
+                        <li>
+                            <a className="aNavegacion" href="/citasdoctor"><i className="fa fa-calendar-check-o"></i><br/>Citas</a>
+                        </li>
+                            {/* Crear historial Médico */}
+                        <li>
+                            <a className="aNavegacion" href="/historialmedicodoctor"><i className="fa fa-paste"></i><br/>Historial Médico</a>
+                        </li>
+                    </ul>
+                </div>
                 <div className="contenido">
-                    <Saludo name={nombre}/>
-                    <div className='Contenedor-Calificacion'> 
+                    <h1>Hola de nuevo {nombre} estas son tus calificaciones:</h1>
+                </div>
+                <div className='Contenedor-Calificacion'> 
                         <div className='Contenedor-texto-Calificacion'>
                             <p className='Nombre-Paciente'>Ricardo Haro</p>
                             <p className='Horario-Cita'>14:00 18/04/2022</p>
@@ -18,7 +32,6 @@ export default function InicioDoctor(){
                             <p className='Calificacion'>🌟🌟🌟🌟🌟</p>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     );

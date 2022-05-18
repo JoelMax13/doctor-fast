@@ -25,7 +25,7 @@ export default function CitasPaciente(){
                     </ul>
                 </div>
                 <div className="contenido">
-                    <h1>{nombre}, Sus citas son:</h1>
+                    <h1>{nombre} sus citas son:</h1>
                 </div>
             </div>
         </div>

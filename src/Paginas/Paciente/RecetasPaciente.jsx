@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PacienteEncabezado from "../../Components/PacienteEncabezado";
 
 export default function RecetasPaciente(){
+    const nombre = localStorage.getItem('nombre');
     return(
         <div className="fondoSistema">
             <div className="cuadro">
@@ -23,7 +24,7 @@ export default function RecetasPaciente(){
                     </ul>
                 </div>
                 <div className="contenido">
-
+                <h1>{nombre} sus últimas recetas médicas son:</h1>
                 </div>
             </div>
         </div>

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import PacienteEncabezado from "../../Components/PacienteEncabezado";
-import Saludo from "../../Components/Saludo";
 import ListaDoctores from '../../Components/ListaDoctores';
 
 export default function InicioPaciente(){
@@ -28,7 +27,7 @@ export default function InicioPaciente(){
                     </ul>
                 </div>
                 <div className="contenido">
-                    <Saludo name={nombre}/>
+                    <h1>Hola de nuevo {nombre}</h1>
                 </div>
                 <div>
                 <ListaDoctores/>

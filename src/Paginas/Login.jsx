@@ -31,23 +31,19 @@ export default function Login(){
             .then(response => {if (response.data.jwt) {
                 let auth = response.data.auth;
                 let rol = response.data.rol;
-                if(auth === true){
+                if(auth == true){
                     localStorage.setItem("user", JSON.stringify(response.data.jwt));
                     localStorage.setItem("nombre", JSON.stringify(response.data.name))
-                    if(rol === 1){
+                    if(rol == 1){
                         navigate('/iniciopaciente');
                     }else{
-                        // localStorage.getItem('user');
                         navigate('/iniciodoctor');
                     }
                 }else{
                     alert("Usuario o contraseña incorrectos. Intente de nuevo.");
                 }
-            }else{
-                alert("hola");
-            } 
-            })
-            .catch(error => alert(error));
+            }})
+            .catch(error => alert("Usuario o contraseña incorrectos. Intente de nuevo."));
     }
 
     function mostrarContrasena(){

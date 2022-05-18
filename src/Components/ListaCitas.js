@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import CuadroDoctores from "./CuadroDoctores";
+import React from 'react'
 
-const ListaDoctores = () => {
+const ListaCitas = () =>{
 
-    const uri = "https://doctorfastapi.herokuapp.com/doctors";
-    
+    //Ver Get
+    const uri = "";
     const getData = async () =>{
         const response = axios.get(uri);
         return response;
     }
-
     const [list, setList] = useState([])
 
     useEffect(()=>{
@@ -18,18 +15,17 @@ const ListaDoctores = () => {
             setList(response.data);
         })
     }, [])
-
     return(
         <div>
             {
-                list.map((Doctor, index)=>(
-                    <CuadroDoctores
+                list.map((Citas, index)=>(
+                    <CuadroCitas
                         key={index}
-                        Doctor={Doctor}
+                        Cita={Citas}
                     />
                 ))
             }
         </div>
     );
 }
-export default ListaDoctores;
+export default ListaCitas;

@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 
 const uri="https://doctorfastapi.herokuapp.com/signup/paciente";
@@ -29,7 +29,7 @@ class RegistroPaciente extends Component{
         let confirmarContrasena = this.confirmarContrasena.current.value;
         
         console.log(cedula, nombres, apellidos, telefono, celular, direccion, usuario, contrasena, correo);
-        if(contrasena == confirmarContrasena){
+        if(contrasena === confirmarContrasena){
             this.ingresarDatosPaciente(cedula, nombres, apellidos, telefono, celular, direccion, usuario, contrasena, correo);
             alert("Usuario creado exitosamente");
             this.recargar();
