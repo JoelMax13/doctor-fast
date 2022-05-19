@@ -15,6 +15,7 @@ const ListaDoctores = () => {
 
     useEffect(()=>{
         getData().then((response)=>{
+            // console.log(response.data);
             setList(response.data);
         })
     }, [])

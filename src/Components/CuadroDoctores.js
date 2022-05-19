@@ -1,28 +1,68 @@
 import React, {useState} from "react";
 import Modal from "./Modal";
+import axios from "axios";
 import Calendar from "react-calendar/dist/umd/Calendar";
 import 'react-calendar/dist/Calendar.css';
 
 const CuadroDoctores = ({Doctor}) => {
     const [estadoModal, cambiarEstadoModal] = useState(false);
     const [date, setDate] = useState(new Date());
+    const [lista, setLista] = useState([]);
+
+    const uri = "https://doctorfastapi.herokuapp.com/doctor/horarios/";
 
     const onChange = date =>{
         setDate(date);
     }
 
-    function buscarFecha(){
+    let doc = Doctor.id;
+    let anio = date.getFullYear();
+    let mes = date.getMonth();
+    let dia = date.getDate();
+    const fecha = anio+"-"+(mes+1)+"-"+dia;
+    const uri2 = uri + fecha + "/" + doc;
 
+    function mostrarHorarios(){
+        document.getElementById("Horarios").style.display = "block";
+
+        const getData = async () =>{
+            const response = axios.get(uri2);
+            return response;
+        }
+
+        getData().then((response)=>{
+                setLista(response.data);
+            })
     }
 
+    const token = localStorage.getItem('user');
+
     function guardarCita(){
-
-        //Doctor.id
-        //jwt
-        //Fecha
-        //Hora
-
-        //POST
+        let Hora = document.getElementById("horaOption").value;
+        var data = JSON.stringify({
+            "id_doctor": Doctor.id,
+            "fecha": fecha,
+            "hora": Hora
+          });
+        
+        var config = {
+            method: 'post',
+            url: 'https://doctorfastapi.herokuapp.com/paciente/cita',
+            headers: { 
+              'token': token, 
+              'Content-Type': 'application/json'
+            },
+            data : data
+        };
+          
+        axios(config)
+        .then(function (response) {
+            console.log(JSON.stringify(response.data));
+            console.log('Hola')
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
 
         cambiarEstadoModal(!estadoModal);
     }
@@ -61,12 +101,24 @@ const CuadroDoctores = ({Doctor}) => {
                 <p><strong>Día:</strong> {date.toLocaleDateString()} 
                     <button 
                         className="btn btn-outline-success"
-                        onClick={buscarFecha}
+                        onClick={mostrarHorarios}
                     >
                         Buscar
                     </button>
                 </p>
-
+                <div id="Horarios">
+                    <p><strong>Horarios: </strong></p>
+                    <select className="form-select">
+                        {
+                            lista.map((Hora)=>(
+                                <option id="horaOption">
+                                    {Hora}
+                                </option>
+                            ))
+                        }
+                    </select>
+                </div>
+                <br/>
                 <button 
                     className="btn btn-outline-primary"
                     onClick={guardarCita}
