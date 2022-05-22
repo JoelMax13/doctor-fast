@@ -35,33 +35,30 @@ const CuadroDoctores = ({Doctor}) => {
             })
     }
 
-    const token = localStorage.getItem('user');
+    const token = localStorage.getItem('user').replace('"','').replace('"','');
 
     function guardarCita(){
         let Hora = document.getElementById("horaOption").value;
+        const uri3 = "https://doctorfastapi.herokuapp.com/paciente/cita";
+
         var data = JSON.stringify({
             "id_doctor": Doctor.id,
             "fecha": fecha,
             "hora": Hora
-          });
+        });
         
-        var config = {
-            method: 'post',
-            url: 'https://doctorfastapi.herokuapp.com/paciente/cita',
-            headers: { 
-              'token': token, 
-              'Content-Type': 'application/json'
-            },
-            data : data
-        };
-          
-        axios(config)
-        .then(function (response) {
-            console.log(JSON.stringify(response.data));
-            console.log('Hola')
+        axios.post(uri3,data, {
+            headers: {
+                'token': token,
+                'Accept' : 'application/json',
+                'Content-Type': 'application/json'
+            }
         })
-        .catch(function (error) {
-            console.log(error);
+        .then(response => {
+            alert(response.data);
+        })
+        .catch((error) => {
+            alert(error);
         });
 
         cambiarEstadoModal(!estadoModal);

@@ -1,5 +1,5 @@
 import React from "react";
-import PacienteEncabezado from "../../Components/PacienteEncabezado";
+import PacienteEncabezado from "../../Components/Paciente/PacienteEncabezado";
 
 export default function HistorialMedicoPaciente(){
     return(

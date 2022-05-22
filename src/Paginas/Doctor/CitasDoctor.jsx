@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import DoctorEncabezado from "../../Components/DoctorEncabezado";
+import React from "react";
+import DoctorEncabezado from "../../Components/Doctor/DoctorEncabezado";
+import ListaCitasDoctor from "../../Components/Doctor/ListaCitasDoctor";
 
 export default function CitasDoctor(){
     const nombre = localStorage.getItem('nombre');
@@ -15,7 +16,6 @@ export default function CitasDoctor(){
                         <li>
                             <a className="menuClickeado aNavegacion" href="/citasdoctor"><i className="fa fa-calendar-check-o"></i><br/>Citas</a>
                         </li>
-                            {/* Crear historial Médico */}
                         <li>
                             <a className="aNavegacion" href="/historialmedicodoctor"><i className="fa fa-paste"></i><br/>Historial Médico</a>
                         </li>
@@ -24,13 +24,8 @@ export default function CitasDoctor(){
                 <div className="contenido">
                     <h1>{nombre} estas son tus próximas citas:</h1>
                 </div>
-                <div className='Contenedor-Calificacion'> 
-                    <div className='Contenedor-texto-Calificacion'>
-                        <p className='Nombre-Paciente'>Ricardo Haro</p>
-                        <p className='Horario-Cita'>14:00 18/04/2022</p>
-                        <p className='Direccion-Doctor'>Av. 12 de Octubre y Colon</p>
-                        <p className='Calificacion'>🌟🌟🌟🌟🌟</p>
-                    </div>
+                <div> 
+                    <ListaCitasDoctor/>
                 </div>
             </div>
         </div>

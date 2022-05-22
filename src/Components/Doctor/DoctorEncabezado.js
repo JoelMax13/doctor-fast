@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import '../Css-Componentes/Paciente/BackgroundPatient.css';
-import '../Css-Componentes/Doctor/ListaCalificaciones.css';
-import '../Imagenes/LogoDoctorFast1.png';
+import '../../Css-Componentes/Paciente/BackgroundPatient.css';
+import '../../Css-Componentes/Doctor/ListaCalificaciones.css';
+import '../../Imagenes/LogoDoctorFast1.png';
 
 export default function DoctorEncabezado(){
     return(
@@ -14,7 +14,7 @@ export default function DoctorEncabezado(){
                 </a>
             </div>
             <header className="headerPaciente">
-                <img className="logo" src={require("../Imagenes/LogoDoctorFast1.png")}/>
+                <img className="logo" src={require("../../Imagenes/LogoDoctorFast1.png")}/>
                 <span className="nombreApp">DoctorFast</span>
             </header>
         </>

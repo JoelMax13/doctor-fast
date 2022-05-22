@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import DoctorEncabezado from "../../Components/DoctorEncabezado";
+import DoctorEncabezado from "../../Components/Doctor/DoctorEncabezado";
 
 export default function HistorialMedicoDoctor(){
     return(

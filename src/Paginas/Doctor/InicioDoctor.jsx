@@ -1,8 +1,10 @@
-import React, { Component } from "react";
-import DoctorEncabezado from "../../Components/DoctorEncabezado";
+import React from "react";
+import DatosDoctor from "../../Components/Doctor/DatosDoctor";
+import DoctorEncabezado from "../../Components/Doctor/DoctorEncabezado";
 
 export default function InicioDoctor(){
     const nombre = localStorage.getItem('nombre');
+
     return(
         <div className="fondoSistema">
             <div className="cuadro">
@@ -22,14 +24,11 @@ export default function InicioDoctor(){
                     </ul>
                 </div>
                 <div className="contenido">
-                    <h1>Hola de nuevo {nombre} estas son tus calificaciones:</h1>
+                    <h1>Hola de nuevo {nombre}</h1>
                 </div>
                 <div className='Contenedor-Calificacion'> 
                         <div className='Contenedor-texto-Calificacion'>
-                            <p className='Nombre-Paciente'>Ricardo Haro</p>
-                            <p className='Horario-Cita'>14:00 18/04/2022</p>
-                            <p className='Direccion-Doctor'>Av. 12 de Octubre y Colon</p>
-                            <p className='Calificacion'>🌟🌟🌟🌟🌟</p>
+                            <DatosDoctor/>
                         </div>
                     </div>
             </div>

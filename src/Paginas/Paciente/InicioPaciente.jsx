@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import PacienteEncabezado from "../../Components/PacienteEncabezado";
-import ListaDoctores from '../../Components/ListaDoctores';
+import PacienteEncabezado from '../../Components/Paciente/PacienteEncabezado';
+import ListaDoctores from '../../Components/Paciente/ListaDoctores';
 
 export default function InicioPaciente(){
 

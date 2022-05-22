@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import PacienteEncabezado from "../../Components/PacienteEncabezado";
+import ListaCitasPaciente from "../../Components/Paciente/ListaCitasPaciente";
+import PacienteEncabezado from "../../Components/Paciente/PacienteEncabezado";
 
 
 export default function CitasPaciente(){
@@ -26,6 +27,9 @@ export default function CitasPaciente(){
                 </div>
                 <div className="contenido">
                     <h1>{nombre} sus citas son:</h1>
+                </div>
+                <div>
+                    <ListaCitasPaciente/>
                 </div>
             </div>
         </div>
