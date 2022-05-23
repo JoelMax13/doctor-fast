@@ -1,13 +1,15 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import DatosRecetasPaciente from './DatosRecetasPaciente';
+import axios from 'axios';
 
 const ListaRecetas = () => {
     const [list, setList] = useState([]);
+    const token = localStorage.getItem('user').replace('"','').replace('"','');
     
     useEffect(()=>{
         var config = {
             method: 'get',
-            url: '',
+            url: 'https://doctorfastapi.herokuapp.com/paciente/cita/anteriores',
             headers: { 
               'token': token
             }
@@ -23,10 +25,10 @@ const ListaRecetas = () => {
     return(
         <div>
             {
-                list.map((Receta, index)=>(
+                list.map((Cita, index)=>(
                     <DatosRecetasPaciente
                         key={index}
-                        Receta={Receta}
+                        Cita={Cita}
                     />
                 ))
             }

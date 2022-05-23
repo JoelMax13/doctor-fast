@@ -9,7 +9,7 @@ const ListaCitasPaciente = () =>{
     useEffect(()=>{
         var config = {
             method: 'get',
-            url: 'https://doctorfastapi.herokuapp.com/paciente/cita',
+            url: 'https://doctorfastapi.herokuapp.com/paciente/cita/nuevas',
             headers: { 
               'token': token
             }

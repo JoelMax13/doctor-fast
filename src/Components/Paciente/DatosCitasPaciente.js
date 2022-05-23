@@ -1,5 +1,6 @@
 import React from 'react';
 import Swal from 'sweetalert';
+import axios from 'axios';
 
 const DatosCitasPaciente = ({Cita}) => {
     const mostrarAlerta = ()=>{
@@ -10,18 +11,31 @@ const DatosCitasPaciente = ({Cita}) => {
         }).then(response=>{
             if(response){
                 borrarCita();
-                Swal({
-                    text: "Cita eliminada correctamente!", 
-                    icon: "success", 
-                    showConfirmButton: false, 
-                    timer:2000
-                });
             }
         })
     }
     function borrarCita(){
+        let id = Cita.id_cita;
+        let uri = "https://doctorfastapi.herokuapp.com/paciente/cita/"
         //DELETE
-        
+        var config = {
+            method: 'delete',
+            url: uri + id,
+            headers: { }
+        };
+          
+        axios(config)
+            .then(function (response) {
+                window.location.href = window.location.href;
+        })
+        .catch(function (error) {
+            Swal({
+                text: "Ocurrió un error vuelve a intentarlo!", 
+                icon: "error", 
+                showConfirmButton: false, 
+                timer:2000
+            });
+        });
     }
     return (
         <div className='Contenedor-Doctor'>

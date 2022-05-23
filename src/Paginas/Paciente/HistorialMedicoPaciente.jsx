@@ -1,6 +1,6 @@
 import React from "react";
 import PacienteEncabezado from "../../Components/Paciente/PacienteEncabezado";
-import DatosRecetasPaciente from "../../Components/Paciente/DatosRecetasPaciente";
+import ListaRecetas from "../../Components/Paciente/ListaRecetas";
 
 export default function HistorialMedicoPaciente(){
     const nombre = localStorage.getItem('nombre');
@@ -25,7 +25,7 @@ export default function HistorialMedicoPaciente(){
                     <h1>{nombre} sus citas pasadas son:</h1>
                 </div>
                 <div>
-                    <DatosRecetasPaciente/>
+                    <ListaRecetas/>
                 </div>
             </div>
         </div>

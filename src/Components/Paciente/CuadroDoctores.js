@@ -4,6 +4,7 @@ import axios from "axios";
 import Calendar from "react-calendar/dist/umd/Calendar";
 import 'react-calendar/dist/Calendar.css';
 import styled from "styled-components";
+import Swal from "sweetalert";
 
 const CuadroDoctores = ({Doctor}) => {
     const [estadoModal, cambiarEstadoModal] = useState(false);
@@ -39,8 +40,9 @@ const CuadroDoctores = ({Doctor}) => {
     const token = localStorage.getItem('user').replace('"','').replace('"','');
 
     function guardarCita(){
-        let Hora = document.getElementById("horaOption").value;
+        let Hora = document.getElementById("selectHora").value;
         const uri3 = "https://doctorfastapi.herokuapp.com/paciente/cita";
+        console.log(Hora);
 
         var data = JSON.stringify({
             "id_doctor": Doctor.id,
@@ -56,7 +58,11 @@ const CuadroDoctores = ({Doctor}) => {
             }
         })
         .then(response => {
-            alert(response.data);
+            Swal({
+                text: "Cita creada correctamente!", 
+                icon: "success", 
+                showConfirmButton: false, 
+            });
         })
         .catch((error) => {
             alert(error);
@@ -109,10 +115,10 @@ const CuadroDoctores = ({Doctor}) => {
                 </p>
                 <div id="Horarios">
                     <p><strong>Horarios: </strong></p>
-                    <select className="form-select">
+                    <select id="selectHora" className="form-select">
                         {
                             lista.map((Hora)=>(
-                                <option id="horaOption">
+                                <option>
                                     {Hora}
                                 </option>
                             ))
