@@ -2,6 +2,7 @@ import React from "react";
 import PacienteEncabezado from "../../Components/Paciente/PacienteEncabezado";
 
 export default function HistorialMedicoPaciente(){
+    const nombre = localStorage.getItem('nombre');
     return(
         <div className="fondoSistema">
             <div className="cuadro">
@@ -23,7 +24,7 @@ export default function HistorialMedicoPaciente(){
                     </ul>
                 </div>
                 <div className="contenido">
-
+                    <h1>{nombre} sus citas pasadas son:</h1>
                 </div>
             </div>
         </div>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import DatosRecetasPaciente from "../../Components/Paciente/DatosRecetasPaciente";
 import PacienteEncabezado from "../../Components/Paciente/PacienteEncabezado";
 
 export default function RecetasPaciente(){
@@ -27,7 +28,7 @@ export default function RecetasPaciente(){
                 <h1>{nombre} sus últimas recetas médicas son:</h1>
                 </div>
                 <div>
-                    
+                    <DatosRecetasPaciente/>
                 </div>
             </div>
         </div>

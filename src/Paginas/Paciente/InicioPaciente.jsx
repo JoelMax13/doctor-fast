@@ -3,7 +3,6 @@ import PacienteEncabezado from '../../Components/Paciente/PacienteEncabezado';
 import ListaDoctores from '../../Components/Paciente/ListaDoctores';
 
 export default function InicioPaciente(){
-
     const nombre = localStorage.getItem('nombre');
 
     return(
