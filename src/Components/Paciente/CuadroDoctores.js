@@ -3,6 +3,7 @@ import Modal from "./Modal";
 import axios from "axios";
 import Calendar from "react-calendar/dist/umd/Calendar";
 import 'react-calendar/dist/Calendar.css';
+import styled from "styled-components";
 
 const CuadroDoctores = ({Doctor}) => {
     const [estadoModal, cambiarEstadoModal] = useState(false);
@@ -88,6 +89,9 @@ const CuadroDoctores = ({Doctor}) => {
                 estado={estadoModal}
                 cambiarEstado={cambiarEstadoModal}
             >
+                <EncabezadoModal>
+                    <h2>Agendar Cita</h2>
+                </EncabezadoModal>
                 <h3><strong>Doctor/a:</strong> {Doctor.nombre} {Doctor.apellido}</h3>
                 <p><strong>Especialidad:</strong> {Doctor.especialidad}</p>
                 <Calendar
@@ -127,3 +131,17 @@ const CuadroDoctores = ({Doctor}) => {
     )
 }
 export default CuadroDoctores;
+const EncabezadoModal = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E8E8E8;
+
+    h2{
+        font-weight: 500;
+        font-size: 20px;
+        color: #1766DC;
+    }
+`;

@@ -1,8 +1,27 @@
-import React from 'react'
+import React from 'react';
+import Swal from 'sweetalert';
 
 const DatosCitasPaciente = ({Cita}) => {
+    const mostrarAlerta = ()=>{
+        Swal({
+            title: "Alerta!",
+            text: "¿Desea Borrar esta cita?",
+            buttons: ["Cancelar", "Aceptar"]
+        }).then(response=>{
+            if(response){
+                borrarCita();
+                Swal({
+                    text: "Cita eliminada correctamente!", 
+                    icon: "success", 
+                    showConfirmButton: false, 
+                    timer:2000
+                });
+            }
+        })
+    }
     function borrarCita(){
         //DELETE
+        
     }
     return (
         <div className='Contenedor-Doctor'>
@@ -12,7 +31,7 @@ const DatosCitasPaciente = ({Cita}) => {
                 <p>Hora: {Cita.hora}</p>
                 <button 
                     className="btn btn-outline-danger"
-                    onClick={borrarCita}
+                    onClick={()=>mostrarAlerta()}
                 >
                     Borrar
                 </button>

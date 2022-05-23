@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
 
 const Modal = ({children, estado, cambiarEstado}) =>{
@@ -7,9 +7,7 @@ const Modal = ({children, estado, cambiarEstado}) =>{
             {estado &&
                 <Overlay>
                     <ContenedorModal>
-                        <EncabezadoModal>
-                            <h2>Agendar Cita</h2>
-                        </EncabezadoModal>
+                        
 
                         <BotonCerrar onClick={()=>cambiarEstado(false)}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
@@ -30,39 +28,39 @@ export default Modal;
 const Overlay = styled.div`
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     background: rgba(0,0,0,.5);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items:center;
 `;
 
 const ContenedorModal = styled.div`
     width: 500px;
-    min-height: 100vh;
+    min-height: 50vh;
     background: #fff;
-    position: relative;
+    position: fixed;
     border-radius: 5px;
     box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
     padding: 20px;
 `;
 
-const EncabezadoModal = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #E8E8E8;
+// const EncabezadoModal = styled.div`
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     margin-bottom: 20px;
+//     padding-bottom: 20px;
+//     border-bottom: 1px solid #E8E8E8;
 
-    h2{
-        font-weight: 500;
-        font-size: 20px;
-        color: #1766DC;
-    }
-`;
+//     h2{
+//         font-weight: 500;
+//         font-size: 20px;
+//         color: #1766DC;
+//     }
+// `;
 
 const BotonCerrar = styled.div`
     position: absolute;
