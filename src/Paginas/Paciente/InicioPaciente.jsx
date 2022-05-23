@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import PacienteEncabezado from '../../Components/Paciente/PacienteEncabezado';
 import ListaDoctores from '../../Components/Paciente/ListaDoctores';
 
@@ -16,9 +16,6 @@ export default function InicioPaciente(){
                         </li>
                         <li>
                             <a className="aNavegacion" href="/citaspaciente"><i className="fa fa-calendar-check-o"></i><br/>Citas</a>
-                        </li>
-                        <li>
-                            <a className="aNavegacion" href="/recetaspaciente"><i className="fa fa-file-text-o"></i><br/>Recetas</a>
                         </li>
                         <li>
                             <a className="aNavegacion" href="/historialmedicopaciente"><i className="fa fa-paste"></i><br/>Historial Médico</a>

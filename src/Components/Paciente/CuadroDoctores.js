@@ -72,9 +72,9 @@ const CuadroDoctores = ({Doctor}) => {
                     <i className="fa fa-user-md iIzq"></i>
                 </div>
                 <div className="centro nav-item">
-                    <p className="Nombre-Doctor">{Doctor.nombre} {Doctor.apellido}</p>
-                    <p className="Especialidad-Doctor">{Doctor.especialidad}</p>
-                    <p className="Direccion-Doctor">{Doctor.direccion}</p>
+                    <p><strong>Doctor/a: </strong>{Doctor.nombre} {Doctor.apellido}</p>
+                    <p><strong>Especialidad: </strong>{Doctor.especialidad}</p>
+                    <p><strong>Dirección: </strong>{Doctor.direccion}</p>
                 </div>
                 <div className="der nav-item">
                     <button 

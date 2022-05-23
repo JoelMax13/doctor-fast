@@ -1,5 +1,6 @@
 import React from "react";
 import PacienteEncabezado from "../../Components/Paciente/PacienteEncabezado";
+import DatosRecetasPaciente from "../../Components/Paciente/DatosRecetasPaciente";
 
 export default function HistorialMedicoPaciente(){
     const nombre = localStorage.getItem('nombre');
@@ -16,15 +17,15 @@ export default function HistorialMedicoPaciente(){
                             <a className="aNavegacion" href="/citaspaciente"><i className="fa fa-calendar-check-o"></i><br/>Citas</a>
                         </li>
                         <li>
-                            <a className="aNavegacion" href="/recetaspaciente"><i className="fa fa-file-text-o"></i><br/>Recetas</a>
-                        </li>
-                        <li>
                             <a className="menuClickeado aNavegacion" href="/historialmedicopaciente"><i className="fa fa-paste"></i><br/>Historial Médico</a>
                         </li>
                     </ul>
                 </div>
                 <div className="contenido">
                     <h1>{nombre} sus citas pasadas son:</h1>
+                </div>
+                <div>
+                    <DatosRecetasPaciente/>
                 </div>
             </div>
         </div>

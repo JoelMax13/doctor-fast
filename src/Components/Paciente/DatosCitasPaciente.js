@@ -26,9 +26,9 @@ const DatosCitasPaciente = ({Cita}) => {
     return (
         <div className='Contenedor-Doctor'>
             <div className='Contenedor-texto-Calificacion'>
-                <p>Doctor: {Cita.nombre} {Cita.apellido}</p>
-                <p>Fecha: {Cita.fecha}</p>
-                <p>Hora: {Cita.hora}</p>
+                <p><strong>Doctor: </strong> {Cita.nombre} {Cita.apellido}</p>
+                <p><strong>Fecha: </strong> {Cita.fecha}</p>
+                <p><strong>Hora: </strong> {Cita.hora}</p>
                 <button 
                     className="btn btn-outline-danger"
                     onClick={()=>mostrarAlerta()}

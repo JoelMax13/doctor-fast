@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Login from './Login';
 import Registro from './Registro';
@@ -10,7 +10,6 @@ import CitasDoctor from './Doctor/CitasDoctor';
 import HistorialMedicoDoctor from './Doctor/HistorialMedicoDoctor';
 import InicioPaciente from './Paciente/InicioPaciente';
 import CitasPaciente from './Paciente/CitasPaciente';
-import RecetasPaciente from './Paciente/RecetasPaciente';
 import HistorialMedicoPaciente from './Paciente/HistorialMedicoPaciente';
 
 
@@ -27,7 +26,6 @@ export default function App() {
             <Route path='/historialmedicodoctor' element={<HistorialMedicoDoctor/>}/>
             <Route path='/iniciopaciente' element={<InicioPaciente/>}/>
             <Route path='/citaspaciente' element={<CitasPaciente/>}/>
-            <Route path='/recetaspaciente' element={<RecetasPaciente/>}/>
             <Route path='/historialmedicopaciente' element={<HistorialMedicoPaciente/>}/>
           </Routes>
         </BrowserRouter>
