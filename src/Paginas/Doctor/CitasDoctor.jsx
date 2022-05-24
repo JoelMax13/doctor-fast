@@ -24,7 +24,7 @@ export default function CitasDoctor(){
                 <div className="contenido">
                     <h1>{nombre} estas son tus próximas citas:</h1>
                 </div>
-                <div> 
+                <div>
                     <ListaCitasDoctor/>
                 </div>
             </div>

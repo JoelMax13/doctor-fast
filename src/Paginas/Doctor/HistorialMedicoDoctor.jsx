@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import DoctorEncabezado from "../../Components/Doctor/DoctorEncabezado";
+import ListaRecetasDoctor from "../../Components/Doctor/ListaRecetasDoctor";
 
 export default function HistorialMedicoDoctor(){
     return(
@@ -21,7 +22,10 @@ export default function HistorialMedicoDoctor(){
                     </ul>
                 </div>
                 <div className="contenido">
-                    
+                    <h1>Ver citas pasadas:</h1>
+                </div>
+                <div>
+                    <ListaRecetasDoctor/>
                 </div>
             </div>
         </div>
