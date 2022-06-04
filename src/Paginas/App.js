@@ -15,7 +15,9 @@ import HistorialMedicoPaciente from './Paciente/HistorialMedicoPaciente';
 
 export default function App() {
   return (
-        <BrowserRouter>
+    <>
+      hola
+      <BrowserRouter>
           <Routes>
             <Route path='/' element={<Login/>}/>
             <Route path='/registro' element={<Registro/>}/>
@@ -29,5 +31,6 @@ export default function App() {
             <Route path='/historialmedicopaciente' element={<HistorialMedicoPaciente/>}/>
           </Routes>
         </BrowserRouter>
+    </>
   );
 }
