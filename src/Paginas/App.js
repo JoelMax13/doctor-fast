@@ -16,7 +16,6 @@ import HistorialMedicoPaciente from './Paciente/HistorialMedicoPaciente';
 export default function App() {
   return (
     <>
-      hola
       <BrowserRouter>
           <Routes>
             <Route path='/' element={<Login/>}/>
